@@ -1,8 +1,16 @@
-// import React from "react";
+
+
+// import React, { useState } from "react";
 // import { Link } from "react-router-dom";
 // import { FaShoppingCart } from "react-icons/fa";
-      
+
 // const Navbar = ({ loggedIn, logOut, cartItems }) => {
+//   const [searchTerm, setSearchTerm] = useState("");
+
+//   const handleSearchChange = (event) => {
+//     setSearchTerm(event.target.value);
+//   };
+
 //   return (
 //     <nav>
 //       <div>
@@ -21,6 +29,14 @@
 //           <option>Signages</option>
 //           <option>Paylons</option>
 //         </select>
+
+//         {/* Search bar */}
+//         <input
+//           type="text"
+//           placeholder="Search..."
+//           value={searchTerm}
+//           onChange={handleSearchChange}
+//         />
 
 //         {loggedIn ? (
 //           <>
@@ -50,13 +66,20 @@
 
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaShoppingCart } from "react-icons/fa";
+import { FaShoppingCart, FaSearch } from "react-icons/fa"; // Added FaSearch icon
 
 const Navbar = ({ loggedIn, logOut, cartItems }) => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [searchResults, setSearchResults] = useState([]); // State to hold search results
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
+  };
+
+  const handleSearchSubmit = () => {
+    // Perform search logic using 'searchTerm'
+    // For now, let's just set the searchResults to an example array
+    setSearchResults(["Result 1", "Result 2", "Result 3"]);
   };
 
   return (
@@ -71,7 +94,7 @@ const Navbar = ({ loggedIn, logOut, cartItems }) => {
       <div>
         <select>
           <option>Road Signs</option>
-          <option>3D&2D Signs </option>
+          <option>3D&2D Signs</option>
           <option>CNC Cuts</option>
           <option>Laser Cuts</option>
           <option>Signages</option>
@@ -79,29 +102,32 @@ const Navbar = ({ loggedIn, logOut, cartItems }) => {
         </select>
 
         {/* Search bar */}
-        <input
-          type="text"
-          placeholder="Search..."
-          value={searchTerm}
-          onChange={handleSearchChange}
-        />
+        <div className="search-container">
+          <input
+            type="text"
+            placeholder="Search..."
+            value={searchTerm}
+            onChange={handleSearchChange}
+          />
+          <button className="search-icon" onClick={handleSearchSubmit}>
+            <FaSearch />
+          </button>
+        </div>
+
+        {/* Display search results */}
+        <ul>
+          {searchResults.map((result, index) => (
+            <li key={index}>{result}</li>
+          ))}
+        </ul>
 
         {loggedIn ? (
           <>
-            <Link to="/my-account">My Account</Link>
-            <button onClick={logOut}>Log Out</button>
-
-            <div className="cart">
-              <Link to="/cart">
-                <FaShoppingCart />
-                <span>{cartItems.length}</span>
-              </Link>
-            </div>
+            {/* User-related links */}
           </>
         ) : (
           <>
-            <Link to="/sign-up">Sign Up</Link>
-            <Link to="/log-in">Log In</Link>
+            {/* User-related links */}
           </>
         )}
       </div>
@@ -110,4 +136,3 @@ const Navbar = ({ loggedIn, logOut, cartItems }) => {
 };
 
 export default Navbar;
-
