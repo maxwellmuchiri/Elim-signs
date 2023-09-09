@@ -29,8 +29,6 @@
 //   );
 // }
 // export default App;
-
-
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -43,6 +41,8 @@ import LogIn from './components/LogIn';
 import SignUp from './components/SignUp';
 import ProductPage from './components/ProductPage';
 import products from './components/Product'; // Import the 'products' array from 'product.js'
+import AboutUs from './AboutUs'; // Import the 'AboutUs' component
+import ContactsUs from './components/ContactUs'; // Import the 'ContactsUs' component
 
 function App() {
   return (
@@ -52,6 +52,8 @@ function App() {
         
         <Switch>
           <Route exact path="/" component={LandingPage} />
+          <Route exact path="/about-us" component={AboutUs} /> {/* Add AboutUs route */}
+          <Route exact path="/contacts" component={ContactsUs} /> {/* Add ContactsUs route */}
           <Route exact path="/cart" component={Cart} />
           <Route exact path="/login" component={LogIn} />
           <Route exact path="/signup" component={SignUp} />
@@ -68,6 +70,7 @@ function App() {
 }
 
 export default App;
+
 
 
 // import React from 'react';
