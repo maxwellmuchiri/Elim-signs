@@ -106,5 +106,31 @@ nav a:hover {
   font-size: 1rem;
   color: #333;
 }
+/* Footer.css */
 
-/* Add more styles as needed */
+/* Style the entire footer section */
+footer {
+  background: #fff; /* White background */
+  color: #000; /* Black text color */
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* Style the icons */
+.footer-icons a {
+  font-size: 24px;
+  margin: 0 10px;
+  color: #000; /* Icon color */
+  text-decoration: none;
+}
+
+/* Style the icon hover effect */
+.footer-icons a:hover {
+  color: #ffd700; /* Icon color on hover */
+  transition: color 0.3s ease;
+}
+
+/* Style the copyright text */
+footer p {
+  margin-top: 10px;
+}
