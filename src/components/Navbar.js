@@ -41,6 +41,7 @@
 //             {/* Dropdown content */}
 //             {isDropdownVisible && (
 //               <div className="dropdown-content" onMouseLeave={hideDropdown}>
+//                 <Link to="/products">All Products</Link>
 //                 <Link to="/products/3d-signs">3D Signs</Link>
 //                 <Link to="/products/2d-signs">2D Signs</Link>
 //                 <Link to="/products/road-signs">Road Signs</Link>
@@ -73,6 +74,7 @@
 // };
 
 // export default Navbar;
+
 
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
@@ -135,6 +137,9 @@ const Navbar = ({ loggedIn, logOut, cartItems }) => {
         </div>
         <div className="menu-item">
           <Link to="/contacts">Talk to Us</Link> {/* Link to the Contacts page */}
+        </div>
+        <div className="menu-item">
+          <Link to="/our-works">Our Works</Link> {/* Link to Our Works page */}
         </div>
         <div className="menu-item">
           <Link to="/cart">
