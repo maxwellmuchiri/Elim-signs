@@ -1,32 +1,85 @@
-/* Navbar.css */
-
-nav {
-  color: #333; /* Text color */
+/* Navbar Container */
+.navbar {
+  background-color: #fff; /* Background color for the Navbar */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 20px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
 }
 
-nav img {
-  width: 50px; /* Adjust the logo image size */
-}
-
-nav a {
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
   text-decoration: none;
-  color: #333; /* Link color */
-  margin: 0 20px;
+  color: #333; /* Text color for the logo */
 }
 
-/* Style the cart icon */
-nav a svg {
-  font-size: 24px;
-  vertical-align: middle;
+.logo img {
+  width: 40px; /* Adjust the logo image size */
+  margin-right: 10px;
 }
 
-/* Add a hover effect to links */
-nav a:hover {
-  text-decoration: underline;
+/* Navigation Menu */
+.menu {
+  display: flex;
+  gap: 20px;
+}
+
+/* Menu Item */
+.menu-item {
+  position: relative;
+  font-size: 1rem;
+}
+
+.menu-item a {
+  text-decoration: none;
+  color: #333; /* Text color for menu items */
+  transition: color 0.3s ease;
+}
+
+.menu-item a:hover {
+  color: #007bff; /* Text color on hover */
+}
+
+/* Dropdown Container */
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff; /* Background color for the dropdown */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  z-index: 1;
+  min-width: 150px;
+}
+
+/* Dropdown Link Styles */
+.dropdown-content a {
+  text-decoration: none;
+  color: #333; /* Text color for dropdown items */
+  transition: color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  color: #007bff; /* Text color on hover */
+}
+
+/* Cart Icon */
+.menu-item .fa-shopping-cart {
+  font-size: 1.2rem;
+  color: #333; /* Cart icon color */
+  transition: color 0.3s ease;
+}
+
+.menu-item .fa-shopping-cart:hover {
+  color: #007bff; /* Cart icon color on hover */
 }
 
 /* User-related links - Add your styles here */
